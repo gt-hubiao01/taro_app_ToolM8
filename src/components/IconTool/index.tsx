@@ -9,7 +9,7 @@ interface IProps {
   bgColor?: string;
 }
 
-const IconButton = ({ clickEvent, name, icon, bgColor }: IProps) => {
+const IconTool = ({ clickEvent, name, icon, bgColor }: IProps) => {
   return (
     <View className={styles.iconButton} style={{ background: bgColor }}>
       <View className={styles.iconContainer} onClick={clickEvent}>
@@ -20,4 +20,4 @@ const IconButton = ({ clickEvent, name, icon, bgColor }: IProps) => {
   );
 };
 
-export default IconButton;
+export default IconTool;

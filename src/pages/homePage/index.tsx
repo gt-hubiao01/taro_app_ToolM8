@@ -1,8 +1,9 @@
 import IconsContainer from "@/components/IconsContainer";
-import IconButton from "@/components/IconButton";
+import IconTool from "@/components/IconTool";
 import { View } from "@tarojs/components";
 import styles from "./index.module.less";
 import Taro from "@tarojs/taro";
+import QRCode from '@/assets/icons/QRCode.svg'
 
 export default function HomePage() {
   return (
@@ -10,7 +11,8 @@ export default function HomePage() {
       <View className={styles.title}>首页</View>
       <View className={styles.toolsContainer}>
         <IconsContainer>
-          <IconButton
+          <IconTool
+            icon={QRCode}
             name='转二维码'
             clickEvent={() => Taro.navigateTo({ url: "/pages/qrcode/index" })}
           />
