@@ -4099,7 +4099,7 @@ cjs-module-lexer@^1.0.0:
   resolved "https://npm.baijia.com/cjs-module-lexer/-/cjs-module-lexer-1.3.1.tgz#c485341ae8fd999ca4ee5af2d7a1c9ae01e0099c"
   integrity sha512-a3KdPAANPbNE4ZUv9h6LckSl9zLsYOP4MBmhIPkRaeyybt+r4UghLvq+xw/YwUcC1gqylCkL4rdVs3Lwupjm4Q==
 
-classnames@^2.2.5:
+classnames@^2.2.5, classnames@^2.5.1:
   version "2.5.1"
   resolved "https://npm.baijia.com/classnames/-/classnames-2.5.1.tgz#ba774c614be0f016da105c858e7159eae8e7687b"
   integrity sha512-saHYOzhIQs6wy2sVxTM6bUDsQO4F50V9RQ22qBpEdCW+I+/Wmke2HOl6lS6dTpdxVhb88/I6+Hs+438c3lfUow==
@@ -9979,6 +9979,11 @@ pure-rand@^6.0.0:
   version "6.1.0"
   resolved "https://npm.baijia.com/pure-rand/-/pure-rand-6.1.0.tgz#d173cf23258231976ccbdb05247c9787957604f2"
   integrity sha512-bVWawvoZoBYpp6yIoQtQXHZjmz35RSVHnUOTefl8Vcjr8snTPY1wnpSPMWekcFwbxI6gtmT7rSYPFvz71ldiOA==
+
+qrcode-base64@^1.0.1:
+  version "1.0.1"
+  resolved "https://npm.baijia.com/qrcode-base64/-/qrcode-base64-1.0.1.tgz#4567ae6f0f609856156d1e91671add31fadc1370"
+  integrity sha512-B0BDmnRSvbj47Nq/+IeZjj22afNrf4rwIloNrSXN6OwnkoO+Q0hsUa53gCEfqNQjx+OcytF3azvQhi6wV2Tk6g==
 
 qs@6.11.0:
   version "6.11.0"
