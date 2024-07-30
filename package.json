@@ -40,8 +40,6 @@
   "author": "",
   "dependencies": {
     "@babel/runtime": "^7.21.5",
-    "@dicebear/collection": "^9.0.1",
-    "@dicebear/core": "^9.0.1",
     "@tarojs/components": "3.6.32",
     "@tarojs/helper": "3.6.32",
     "@tarojs/plugin-framework-react": "3.6.32",

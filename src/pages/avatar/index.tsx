@@ -1,44 +1,39 @@
-import { createAvatar } from "@dicebear/core";
 import { View, Button, Input, Image } from "@tarojs/components";
 import styles from "./index.module.less";
 import { GlassContainer } from "@/components/GlassContainer";
-import { useEffect, useState } from "react";
+import { useMemo, useState } from "react";
 import { avatarModelMap } from "./utils";
-import { downloadBase64Image } from "@/utils/downloadBase64Image";
 
 export default function AvatarPage() {
-  const [img, setImg] = useState<string>("");
-  const [model, setModel] = useState<any>(avatarModelMap.lorelei);
-  const [seed, setSeed] = useState<string>("");
+  const [loading, setLoading] = useState(true);
+  const [model, setModel] = useState(avatarModelMap.lorelei);
+  const [seed, setSeed] = useState("");
 
   const handleConfirm = (e) => {
     setSeed(e.detail.value);
-  };
-
-  const handleDownload = () => {
-    if (!img) return;
-    downloadBase64Image(img);
   };
 
   const handleChangeModel = (key: string) => {
     setModel(avatarModelMap[key]);
   };
 
-  useEffect(() => {
-    const avatar = createAvatar(model, {
-      seed,
-    });
-    setImg(avatar.toDataUri());
+  const url = useMemo(() => {
+    setLoading(true);
+    return `https://api.dicebear.com/9.x/${model}/svg?seed=${seed}`;
   }, [model, seed]);
+
+  const handleImagLoad = () => {
+    setLoading(false);
+  };
 
   return (
     <View className={styles.avatarPage}>
       <GlassContainer className={styles.avatarContainer}>
-        {img && <Image src={img} className={styles.avatar} />}
-        <Button className={styles.downloadBtn} onClick={handleDownload}>
-          下载头像
-        </Button>
+        {loading && <View className={styles.loading} />}
+        <Image src={url} className={styles.avatar} onLoad={handleImagLoad} />
       </GlassContainer>
+      <View className={styles.operate}>
+      <Button className={styles.downloadBtn}>下载头像</Button>
       <Input
         className={styles.input}
         type='text'
@@ -46,6 +41,8 @@ export default function AvatarPage() {
         onConfirm={handleConfirm}
       />
 
+      </View>
+      
       <GlassContainer className={styles.modelsContainer}>
         {Object.keys(avatarModelMap).map((key) => (
           <Button
