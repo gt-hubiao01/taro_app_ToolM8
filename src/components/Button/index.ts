@@ -1,3 +1,4 @@
 import PressButton from "./PressButton";
+import ClickButton from "./DownloadButton";
 
-export { PressButton };
+export { PressButton, ClickButton };

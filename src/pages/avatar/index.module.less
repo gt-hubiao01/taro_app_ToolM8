@@ -1,0 +1,57 @@
+.avatarPage {
+  height: 100vh;
+  background-image: url("https://img1.baidu.com/it/u=1986348599,2771392298&fm=253&fmt=auto&app=138&f=JPEG?w=486&h=850");
+  background-size: cover;
+
+  padding-top: 10px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .avatarContainer {
+    width: 60%;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .avatar {
+      width: 100px;
+      height: 100px;
+    }
+
+    .downloadBtn {
+      width: fit-content;
+      font-size: 14px;
+      background-color: rgba(98, 205, 183, 70);
+    }
+  }
+
+  .input {
+    width: 60%;
+    height: 30px;
+    margin-top: 6px;
+    padding: 3px;
+    border-radius: 5px;
+    border: 2.5px solid #859ce080;
+    background-color: rgb(179, 208, 238);
+    font-size: 14px;
+  }
+
+  .modelsContainer {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    .modelBtn {
+      font-size: 12px;
+      width: fit-content;
+      background: #00000080;
+      color: #fff;
+    }
+  }
+}
