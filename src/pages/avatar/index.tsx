@@ -1,8 +1,9 @@
-import { View, Button, Input, Image } from "@tarojs/components";
+import { View, Button, Input, Image, Canvas } from "@tarojs/components";
 import styles from "./index.module.less";
 import { GlassContainer } from "@/components/GlassContainer";
 import { useMemo, useState } from "react";
 import { avatarModelMap } from "./utils";
+import {processSvgToPngAndSave} from "@/utils/processSvgToPngAndSave"
 
 export default function AvatarPage() {
   const [loading, setLoading] = useState(true);
@@ -26,6 +27,10 @@ export default function AvatarPage() {
     setLoading(false);
   };
 
+  const handleDownload = () => {
+    processSvgToPngAndSave(url);
+  };
+
   return (
     <View className={styles.avatarPage}>
       <GlassContainer className={styles.avatarContainer}>
@@ -33,16 +38,18 @@ export default function AvatarPage() {
         <Image src={url} className={styles.avatar} onLoad={handleImagLoad} />
       </GlassContainer>
       <View className={styles.operate}>
-      <Button className={styles.downloadBtn}>下载头像</Button>
-      <Input
-        className={styles.input}
-        type='text'
-        placeholder='请输入生成头像的随机seed'
-        onConfirm={handleConfirm}
-      />
-
+        <Button className={styles.downloadBtn} onClick={handleDownload}>
+          下载头像
+        </Button>
+        <Input
+          className={styles.input}
+          type='text'
+          placeholder='请输入生成头像的随机seed'
+          onConfirm={handleConfirm}
+        />
       </View>
-      
+      <Canvas id='canvas' className={styles.canvas} type='2d' />
+
       <GlassContainer className={styles.modelsContainer}>
         {Object.keys(avatarModelMap).map((key) => (
           <Button
